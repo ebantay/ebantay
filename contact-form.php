@@ -13,7 +13,7 @@ if (isset($_POST['submit'])){
     $header .= "Reply-To: $email";	
     
      mail($to, $subject, $body, $email);
-     header("Location: index.php?mailsent");
+     
 }
 
 
