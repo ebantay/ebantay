@@ -1,10 +1,10 @@
 <?php
 
 if (isset($_POST['submit'])){
-    $name = strip_tags(htmlspecialchars($_POST['name']));
-    $email = strip_tags(htmlspecialchars($_POST['email']));
-    $m_subject = strip_tags(htmlspecialchars($_POST['subject']));
-    $message = strip_tags(htmlspecialchars($_POST['message']));
+    $name = $_POST['name'];
+    $email = $_POST['email'];
+    $m_subject = $_POST['subject'];
+    $message = $_POST['message'];
     
     $to = "earlchristianbantay@gmail.com"; // Change this email to your //
     $subject = "$m_subject:  $name";
@@ -12,7 +12,7 @@ if (isset($_POST['submit'])){
     $header = "From: $email";
     $header .= "Reply-To: $email";	
     
-     mail($to, $subject, $body, $email);
+     mail($to, $subject, $body, $header);
      
 }
 
